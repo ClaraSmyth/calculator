@@ -1,3 +1,19 @@
+const buttons = document.querySelectorAll('button')
+const current = document.querySelector('.current')
+const previous = document.querySelector('.previous')
+let currentValue = 0;
+
+buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+        console.log()
+        if (button.id === 'number') {
+            current.innerText = current.innerText + `${button.innerText}`;
+            currentValue = current.innerText + `${button.innerText}`;
+            console.log(currentValue)
+        }
+    })
+})
+
 function operate(a, b, operator) {
     switch (operator) {
         case 'add':
@@ -15,4 +31,5 @@ function operate(a, b, operator) {
     }
 }
 
-console.log(operate(3, 3, 'add'))
+
+// console.log()
