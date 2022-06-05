@@ -1,0 +1,36 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+/* MAIN */
+
+.calc-container {
+    background-color: gray;
+    min-height: 500px;
+    width: 350px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
+    padding: 5px;
+}
+
+.output {
+    grid-column: span 4;
+}
+
+.btn {
+    border: 1px solid black;
+}
+
+.btn-span {
+    grid-column: span 2;
+}
+
+
+/* FOOTER */
