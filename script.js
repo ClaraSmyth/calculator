@@ -3,41 +3,47 @@ const current = document.querySelector('.current')
 const previous = document.querySelector('.previous')
 let currentValue = 0;
 let previousValue = 0;
-let operator = 0;
+let operator = '';
 
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
         console.log()
         if (button.id === 'number') {
             current.innerText = current.innerText + `${button.innerText}`;
-            currentValue = current.innerText;
+            currentValue = Number(current.innerText);
         } else if (button.id === 'operator') {
             previousValue = currentValue;
             currentValue = 0;
             previous.innerText = current.innerText + `${button.innerText}`;
-            current.innerText = null;
+            current.innerText = '';
             operator = button.innerText;
-            console.log(currentValue, previousValue, operator)
+        } else if (button.id === 'equals') {
+            currentValue = operate(currentValue, previousValue, operator);
+            current.innerText = currentValue;
+            previousValue = 0;
+            previous.innerText = '';
+            console.log(currentValue)
         }
+        console.log(currentValue, previousValue, operator)
     })
 })
 
 function operate(a, b, operator) {
     switch (operator) {
-        case 'add':
+        case '+':
             return a + b;
             break;
-        case 'subtract':
+        case '-':
             return a - b;
             break;
-        case 'multiply':
+        case '×':
             return a * b;
             break;
-        case 'divide':
+        case '÷':
             return a / b;
             break;
     }
 }
 
 
-// console.log()
+// console.log(operate(3, 3, '÷'))
