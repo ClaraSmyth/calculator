@@ -22,6 +22,12 @@ body {
 
 .output {
     grid-column: span 4;
+    background-color: brown;
+    min-height: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-end;
 }
 
 .btn {
