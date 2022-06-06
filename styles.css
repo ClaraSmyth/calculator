@@ -77,6 +77,27 @@ h1 {
     background-color: hsla(0, 0%, 100%, 0.1);
 }
 
+.kb-supp-container {
+    position: relative;
+    text-align: center;
+    border: 2px solid hsla(0, 0%, 100%, 0.5);
+    border-radius: 20px;
+    background-color: hsla(0, 0%, 100%, 0.35);
+    box-shadow: 1px 1px 20px hsla(0, 0%, 100%, .8);
+    line-height: 0.5em;
+    padding: 5px;
+}
+
+.kb-supp {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.ul {
+    text-decoration: underline;
+    text-decoration-thickness: 1.5px;
+}
+
 
 /* FOOTER */
 
