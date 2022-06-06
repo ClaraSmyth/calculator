@@ -64,6 +64,7 @@ buttons.forEach((button) => {
     })
 })
 
+// Does the calculations 
 function operate(a, b, operator) {
     switch (operator) {
         case '+':
@@ -87,28 +88,14 @@ function operate(a, b, operator) {
 // Keyboard support
 document.addEventListener('keydown', e => {
     buttons.forEach((button) => {
-        console.log(e.key)
-        if (e.key === button.innerText) {
-            button.click();
-        } else if ((e.key === 'Enter') && (button.innerText === '=')) {
-            button.click();
-        } else if ((e.key === 'Backspace') && (button.innerText === 'Del')) {
-            button.click();
-        } else if ((e.key === 'Escape') && (button.innerText === 'AC')) {
-            button.click();
-        } else if ((e.key === '.') && (button.innerText === '.')) {
-            button.click();
-        } else if ((e.key === '+') && (button.innerText === '+')) {
-            button.click();
-        } else if ((e.key === '-') && (button.innerText === '-')) {
-            button.click();
-        } else if ((e.key === '*') && (button.innerText === '×')) {
-            button.click();
-        } else if ((e.key === '/') && (button.innerText === '÷')) {
-            e.preventDefault();
-            button.click();
-        } else if ((e.key === '%') && (button.innerText === '%')) {
-            button.click();
-        }
+        if ((e.key === button.innerText)
+        || ((e.key === 'Enter') && (button.innerText === '='))
+        || ((e.key === 'Backspace') && (button.innerText === 'Del'))
+        || ((e.key === 'Escape') && (button.innerText === 'AC'))
+        || ((e.key === '*') && (button.innerText === '×'))
+        || ((e.key === '/') && (button.innerText === '÷'))) {
+                e.preventDefault();
+                button.click();
+        } 
     });
 });
