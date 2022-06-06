@@ -16,6 +16,8 @@ buttons.forEach((button) => {
             operator === null ? previousValue = currentValue : previousValue = operate(previousValue, currentValue, operator);
             currentValue = 0;
             operator = button.innerText;
+            previous.innerText += current.innerText + `${button.innerText}`;
+            current.innerText = currentValue;
         } else if (button.id === 'decimal'){
             currentValue.toString().includes('.') ? currentValue : currentValue += '.';
         }else if (button.id === 'equals') {
