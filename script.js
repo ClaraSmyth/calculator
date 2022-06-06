@@ -31,6 +31,7 @@ buttons.forEach((button) => {
             operator = null;
             // Display update below here
             current.innerText = finalValue;
+            // Display update below here
             previous.innerText = null;
         } else if (button.id === 'delete') {
             currentValue = Number(currentValue.toString().slice(0, -1));
@@ -40,6 +41,9 @@ buttons.forEach((button) => {
             previousValue = 0;
             finalValue = null;
             operator = null;
+            // Display update below here
+            current.innerText = null;
+            previous.innerText = null;
         }
         console.log(previousValue, currentValue, finalValue, operator)
     })
