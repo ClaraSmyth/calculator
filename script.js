@@ -9,19 +9,14 @@ buttons.forEach((button) => {
     button.addEventListener('click', () => {
         console.log()
         if (button.id === 'number') {
-            current.innerText = current.innerText + `${button.innerText}`;
-            currentValue = Number(current.innerText);
+            currentValue = Number(currentValue + button.innerText);
         } else if (button.id === 'operator') {
             previousValue = currentValue;
             currentValue = 0;
-            previous.innerText = current.innerText + `${button.innerText}`;
-            current.innerText = '';
             operator = button.innerText;
         } else if (button.id === 'equals') {
             currentValue = operate(currentValue, previousValue, operator);
-            current.innerText = currentValue;
             previousValue = 0;
-            previous.innerText = '';
             console.log(currentValue)
         }
         console.log(currentValue, previousValue, operator)
@@ -45,5 +40,32 @@ function operate(a, b, operator) {
     }
 }
 
+// let test = /\+/.test(previous.innerText);
 
 // console.log(operate(3, 3, '÷'))
+
+
+// buttons.forEach((button) => {
+//     button.addEventListener('click', () => {
+//         console.log()
+//         if (button.id === 'number') {
+//             previous.innerText = current.innerText;
+//             current.innerText = '';
+//             current.innerText += `${button.innerText}`;
+//             currentValue = Number(current.innerText);
+//         } else if (button.id === 'operator') {
+//             previousValue = currentValue;
+//             currentValue = 0;
+//             previous.innerText = current.innerText + `${button.innerText}`;
+//             current.innerText = '';
+//             operator = button.innerText;
+//         } else if (button.id === 'equals') {
+//             currentValue = operate(currentValue, previousValue, operator);
+//             current.innerText = currentValue;
+//             previousValue = 0;
+//             previous.innerText = '';
+//             console.log(currentValue)
+//         }
+//         console.log(currentValue, previousValue, operator)
+//     })
+// })
