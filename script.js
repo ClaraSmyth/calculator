@@ -16,12 +16,14 @@ buttons.forEach((button) => {
         } 
         
         else if (button.id === 'operator') {
-            operator === null ? previousValue = currentValue + finalValue : previousValue = operate(previousValue, currentValue, operator);
-            currentValue = 0;
-            operator = button.innerText;
-            // Display update below here
-            previous.innerText += current.innerText + `${button.innerText}`;
-            current.innerText = currentValue;
+            if (operator === null) {
+                previousValue = currentValue + finalValue;
+                currentValue = 0;
+                operator = button.innerText;
+                // Display update below here
+                previous.innerText += current.innerText + `${button.innerText}`;
+                current.innerText = currentValue;
+            }
         } 
         
         else if (button.id === 'decimal'){
