@@ -16,12 +16,17 @@ buttons.forEach((button) => {
             currentValue = 0;
             operator = button.innerText;
         } else if (button.id === 'equals') {
-            finalValue = operate(currentValue, previousValue, operator);
+            finalValue = operate(previousValue, currentValue, operator);
             previousValue = 0;
             currentValue = 0;
             operator = '';
+        } else if (button.id === 'clear') {
+            currentValue = 0;
+            previousValue = 0;
+            finalValue = null;
+            operator = '';
         }
-        console.log(currentValue, previousValue, finalValue, operator)
+        console.log(previousValue, currentValue, finalValue, operator)
     })
 })
 
