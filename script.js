@@ -94,6 +94,20 @@ document.addEventListener('keydown', e => {
             button.click();
         } else if ((e.key === 'Backspace') && (button.innerText === 'Del')) {
             button.click();
+        } else if ((e.key === 'Escape') && (button.innerText === 'AC')) {
+            button.click();
+        } else if ((e.key === '.') && (button.innerText === '.')) {
+            button.click();
+        } else if ((e.key === '+') && (button.innerText === '+')) {
+            button.click();
+        } else if ((e.key === '-') && (button.innerText === '-')) {
+            button.click();
+        } else if ((e.key === '*') && (button.innerText === '×')) {
+            button.click();
+        } else if ((e.key === '/') && (button.innerText === '÷')) {
+            button.click();
+        } else if ((e.key === '%') && (button.innerText === '%')) {
+            button.click();
         }
     });
 });
