@@ -13,18 +13,24 @@ buttons.forEach((button) => {
             currentValue = Number(currentValue + button.innerText);
             // Display update below here
             current.innerText = currentValue;
-        } else if (button.id === 'operator') {
+        } 
+        
+        else if (button.id === 'operator') {
             operator === null ? previousValue = currentValue + finalValue : previousValue = operate(previousValue, currentValue, operator);
             currentValue = 0;
             operator = button.innerText;
             // Display update below here
             previous.innerText += current.innerText + `${button.innerText}`;
             current.innerText = currentValue;
-        } else if (button.id === 'decimal'){
+        } 
+        
+        else if (button.id === 'decimal'){
             currentValue.toString().includes('.') ? currentValue : currentValue += '.';
             // Display update below here
             current.innerText = currentValue;
-        }else if (button.id === 'equals') {
+        }
+        
+        else if (button.id === 'equals') {
             if (operator === null) {
                 currentValue;
             } else {
@@ -36,10 +42,14 @@ buttons.forEach((button) => {
                 current.innerText = finalValue;
                 previous.innerText = null;
             }
-        } else if (button.id === 'delete') {
+        } 
+        
+        else if (button.id === 'delete') {
             currentValue = Number(currentValue.toString().slice(0, -1));
             current.innerText = currentValue;
-        } else if (button.id === 'clear') {
+        } 
+        
+        else if (button.id === 'clear') {
             currentValue = 0;
             previousValue = 0;
             finalValue = null;
