@@ -105,6 +105,7 @@ document.addEventListener('keydown', e => {
         } else if ((e.key === '*') && (button.innerText === '×')) {
             button.click();
         } else if ((e.key === '/') && (button.innerText === '÷')) {
+            e.preventDefault();
             button.click();
         } else if ((e.key === '%') && (button.innerText === '%')) {
             button.click();
