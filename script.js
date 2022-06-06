@@ -4,7 +4,7 @@ const previous = document.querySelector('.previous')
 let currentValue = 0;
 let previousValue = 0;
 let finalValue = null;
-let operator = '';
+let operator = null;
 
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
@@ -12,7 +12,7 @@ buttons.forEach((button) => {
             finalValue = null;
             currentValue = Number(currentValue + button.innerText);
         } else if (button.id === 'operator') {
-            finalValue == null ? previousValue = currentValue : previousValue = finalValue;
+            operator === null ? previousValue = currentValue : previousValue = operate(previousValue, currentValue, operator);
             currentValue = 0;
             operator = button.innerText;
         } else if (button.id === 'decimal'){
@@ -21,14 +21,14 @@ buttons.forEach((button) => {
             finalValue = operate(previousValue, currentValue, operator);
             previousValue = 0;
             currentValue = 0;
-            operator = '';
+            operator = null;
         } else if (button.id === 'delete') {
             currentValue = Number(currentValue.toString().slice(0, -1));
         } else if (button.id === 'clear') {
             currentValue = 0;
             previousValue = 0;
             finalValue = null;
-            operator = '';
+            operator = null;
         }
         console.log(previousValue, currentValue, finalValue, operator)
     })
