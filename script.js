@@ -20,6 +20,8 @@ buttons.forEach((button) => {
             previousValue = 0;
             currentValue = 0;
             operator = '';
+        } else if (button.id === 'delete') {
+            currentValue = Number(currentValue.toString().slice(0, -1));
         } else if (button.id === 'clear') {
             currentValue = 0;
             previousValue = 0;
