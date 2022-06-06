@@ -83,3 +83,12 @@ function operate(a, b, operator) {
             break;
     }
 }
+
+// Keyboard support
+document.addEventListener('keypress', e => {
+    buttons.forEach((button) => {
+        if (e.key === button.innerText) {
+            button.click();
+        }
+    });
+});
