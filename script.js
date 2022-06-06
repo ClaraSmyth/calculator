@@ -34,6 +34,7 @@ buttons.forEach((button) => {
             previous.innerText = null;
         } else if (button.id === 'delete') {
             currentValue = Number(currentValue.toString().slice(0, -1));
+            current.innerText = currentValue;
         } else if (button.id === 'clear') {
             currentValue = 0;
             previousValue = 0;
