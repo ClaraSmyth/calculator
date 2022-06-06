@@ -85,13 +85,15 @@ function operate(a, b, operator) {
 }
 
 // Keyboard support
-document.addEventListener('keypress', e => {
+document.addEventListener('keydown', e => {
     buttons.forEach((button) => {
         console.log(e.key)
         if (e.key === button.innerText) {
             button.click();
         } else if ((e.key === 'Enter') && (button.innerText === '=')) {
             button.click();
-        } 
+        } else if ((e.key === 'Backspace') && (button.innerText === 'Del')) {
+            button.click();
+        }
     });
 });
