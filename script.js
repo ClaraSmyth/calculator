@@ -11,21 +11,27 @@ buttons.forEach((button) => {
         if (button.id === 'number') {
             finalValue = null;
             currentValue = Number(currentValue + button.innerText);
+            // Display update below here
             current.innerText = currentValue;
         } else if (button.id === 'operator') {
             operator === null ? previousValue = currentValue : previousValue = operate(previousValue, currentValue, operator);
             currentValue = 0;
             operator = button.innerText;
+            // Display update below here
             previous.innerText += current.innerText + `${button.innerText}`;
             current.innerText = currentValue;
         } else if (button.id === 'decimal'){
             currentValue.toString().includes('.') ? currentValue : currentValue += '.';
+            // Display update below here
             current.innerText = currentValue;
         }else if (button.id === 'equals') {
             finalValue = operate(previousValue, currentValue, operator);
             previousValue = 0;
             currentValue = 0;
             operator = null;
+            // Display update below here
+            current.innerText = finalValue;
+            previous.innerText = null;
         } else if (button.id === 'delete') {
             currentValue = Number(currentValue.toString().slice(0, -1));
         } else if (button.id === 'clear') {
