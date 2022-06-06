@@ -25,14 +25,17 @@ buttons.forEach((button) => {
             // Display update below here
             current.innerText = currentValue;
         }else if (button.id === 'equals') {
-            finalValue = operate(previousValue, currentValue, operator);
-            previousValue = 0;
-            currentValue = 0;
-            operator = null;
-            // Display update below here
-            current.innerText = finalValue;
-            // Display update below here
-            previous.innerText = null;
+            if (operator === null) {
+                currentValue;
+            } else {
+                finalValue = operate(previousValue, currentValue, operator);
+                currentValue = 0;
+                previousValue = 0;
+                operator = null;
+                // Display update below here
+                current.innerText = finalValue;
+                previous.innerText = null;
+            }
         } else if (button.id === 'delete') {
             currentValue = Number(currentValue.toString().slice(0, -1));
             current.innerText = currentValue;
