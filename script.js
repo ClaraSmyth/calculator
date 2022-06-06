@@ -3,23 +3,25 @@ const current = document.querySelector('.current')
 const previous = document.querySelector('.previous')
 let currentValue = 0;
 let previousValue = 0;
+let finalValue = null;
 let operator = '';
 
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
-        console.log()
         if (button.id === 'number') {
+            finalValue = null;
             currentValue = Number(currentValue + button.innerText);
         } else if (button.id === 'operator') {
-            previousValue = currentValue;
+            finalValue == null ? previousValue = currentValue : previousValue = finalValue;
             currentValue = 0;
             operator = button.innerText;
         } else if (button.id === 'equals') {
-            currentValue = operate(currentValue, previousValue, operator);
+            finalValue = operate(currentValue, previousValue, operator);
             previousValue = 0;
-            console.log(currentValue)
+            currentValue = 0;
+            operator = '';
         }
-        console.log(currentValue, previousValue, operator)
+        console.log(currentValue, previousValue, finalValue, operator)
     })
 })
 
