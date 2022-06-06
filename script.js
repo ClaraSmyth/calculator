@@ -46,6 +46,9 @@ function operate(a, b, operator) {
         case '÷':
             return a / b;
             break;
+        case '%':
+            return a / 100 * b;
+            break;
     }
 }
 
