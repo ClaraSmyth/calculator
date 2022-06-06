@@ -11,6 +11,7 @@ buttons.forEach((button) => {
         if (button.id === 'number') {
             finalValue = null;
             currentValue = Number(currentValue + button.innerText);
+            current.innerText = currentValue;
         } else if (button.id === 'operator') {
             operator === null ? previousValue = currentValue : previousValue = operate(previousValue, currentValue, operator);
             currentValue = 0;
