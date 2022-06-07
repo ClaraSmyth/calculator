@@ -15,7 +15,6 @@ body {
     flex-direction: column;
     align-items: center;
     font-family: 'Sriracha', cursive;
-    z-index: 0;
 }
 
 h1 {
@@ -78,6 +77,10 @@ h1 {
     background-color: hsla(0, 0%, 100%, 0.1);
 }
 
+.btn:active {
+    transform: scale(1);
+}
+
 .kb-supp-btn {
     position: relative;
     top: -270px;
@@ -90,8 +93,12 @@ h1 {
 }
 
 .kb-supp-btn:hover {
-    color:hsla(0, 0%, 100%, 1);
+    color:hsla(0, 0%, 100%, 0.8);
     transform: scale(1.4);
+}
+
+.kb-supp-btn:active {
+    transform: scale(1);
 }
 
 .kb-supp-container {
@@ -107,7 +114,7 @@ h1 {
     box-shadow: 1px 1px 20px hsla(0, 0%, 100%, .8);
     line-height: 0.5em;
     padding: 25px 15px;
-    /* display: none; */
+    display: none;
 }
 
 .kb-supp-container h2 {

@@ -1,6 +1,7 @@
-const buttons = document.querySelectorAll('button')
-const current = document.querySelector('.current')
-const previous = document.querySelector('.previous')
+const buttons = document.querySelectorAll('button');
+const current = document.querySelector('.current');
+const previous = document.querySelector('.previous');
+const kbSupport = document.querySelector('.kb-supp-container');
 let currentValue = 0;
 let previousValue = 0;
 let finalValue = null;
@@ -68,10 +69,21 @@ buttons.forEach((button) => {
             // Display update below here
             current.innerText = null;
             previous.innerText = null;
-        }
+        } 
+        
+        else if (button.id === 'kb-supp-btn') {
+            if (button.innerText === '>') {
+                button.innerText = '<';
+                kbSupport.style.display = 'block';
+                kbSupport.animate({ transform: ['scale(0)', 'scale(1)']}, {duration: 300, easing: 'ease-in'});
+            } else {
+                button.innerText = '>';
+                kbSupport.style.display = 'none';
+            }
+        }     
         console.log(previousValue, currentValue, finalValue, operator)
-    })
-})
+    });
+});
 
 // Does the calculations 
 function operate(a, b, operator) {
