@@ -145,6 +145,13 @@ main {
     text-decoration-thickness: 1.5px;
 }
 
+@media screen and (max-width: 950px) {
+    .kb-supp-container,
+    .kb-supp-btn {
+        display: none;
+    }
+}
+
 /* FOOTER */
 
 footer {
