@@ -72,13 +72,13 @@ buttons.forEach((button) => {
         } 
         
         else if (button.id === 'kb-supp-btn') {
+
             if (button.innerText === '>') {
                 button.innerText = '<';
-                kbSupport.style.display = 'block';
-                kbSupport.animate({ transform: ['scale(0)', 'scale(1)']}, {duration: 300, easing: 'ease-in'});
+                kbSupport.classList.add('slide-in')
             } else {
                 button.innerText = '>';
-                kbSupport.style.display = 'none';
+                kbSupport.classList.toggle('slide-in')
             }
         }     
         console.log(previousValue, currentValue, finalValue, operator)

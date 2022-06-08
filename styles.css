@@ -25,6 +25,10 @@ h1 {
 
 /* MAIN */
 
+main {
+    background-color: inherit;
+}
+
 .calc-container {
     min-height: 500px;
     width: 350px;
@@ -89,7 +93,6 @@ h1 {
     color:hsla(0, 0%, 100%, .3);
     border: none;
     background: none;
-    /* display: none; */
 }
 
 .kb-supp-btn:hover {
@@ -104,7 +107,7 @@ h1 {
 .kb-supp-container {
     position: relative;
     top: calc(-270px - 110px);
-    left: 375px;
+    left: 100px;
     text-align: center;
     height: 170px;
     width: 250px;
@@ -114,7 +117,17 @@ h1 {
     box-shadow: 1px 1px 20px hsla(0, 0%, 100%, .8);
     line-height: 0.5em;
     padding: 25px 15px;
-    display: none;
+    opacity: 0;
+    transform: translateX(0px);
+    transition: 1s;
+    z-index: -1;
+}
+
+.kb-supp-container.slide-in {
+    opacity: 1;
+    transform: translateX(275px);
+    transition: 1s;
+    z-index: -1;
 }
 
 .kb-supp-container h2 {
@@ -131,7 +144,6 @@ h1 {
     text-decoration: underline;
     text-decoration-thickness: 1.5px;
 }
-
 
 /* FOOTER */
 
