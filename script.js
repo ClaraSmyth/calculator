@@ -72,7 +72,6 @@ buttons.forEach((button) => {
         } 
         
         else if (button.id === 'kb-supp-btn') {
-
             if (button.innerText === '>') {
                 button.innerText = '<';
                 kbSupport.classList.add('slide-in')
